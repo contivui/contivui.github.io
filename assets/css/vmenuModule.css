@@ -18,7 +18,7 @@
 	font-size: 14px;
 	color: #517fa4;
 	text-decoration: none;
-	outline: none;
+	outline: none; text-transform:capitalize;
 	
 }
 img{ max-width:100%; height:auto;}
@@ -41,6 +41,8 @@ img{ max-width:100%; height:auto;}
 	
 }
 .u-vmenu > ul li ul a { background:url("../images/list.png") no-repeat scroll 14px center rgba(0, 0, 0, 0);}
+#myDataSearch > a{display: block;
+    padding: 5px 10px 5px 30px; background:url("../images/list.png") no-repeat scroll 14px center rgba(0, 0, 0, 0);}
 .u-vmenu > ul li.active > a:after {
     border-bottom: 7px solid transparent;
     border-right: 10px solid #fff;

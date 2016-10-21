@@ -3,7 +3,23 @@ return {
         restrict : 'A',
 		scope    : true,
         link     : function(scope, element, attrs) {
-			
+	$('#myNodes li').clone().appendTo('#myDataSearch');
+	
+	document.getElementById("mySearch").addEventListener("keyup", function(){
+		    document.getElementById("myDataSearch").style.display = 'block';
+			var $partMneu = $('#myNodes').clone();
+			$('#myDataSearch').empty();
+			var value = document.getElementById("mySearch").value;
+			if(!value.length > 0) {
+				document.getElementById("myNodes").style.display = 'block';
+				document.getElementById("myDataSearch").style.display = 'none';
+				return};
+			document.getElementById("myNodes").style.display = 'none';
+			$('li a:contains('+value+')',$partMneu).appendTo('#myDataSearch');									   
+	}); 
+	
+	
+	
 			$('.leftCont').width($('.mainLeft').width()).height($(window).height()-68);
 			$( window ).resize(function() {
 				$('.leftCont').width($('.mainLeft').width()).height($(window).height()-68);
@@ -135,4 +151,4 @@ app.filter('custom', function() {
     });
     return result;
   }
-});
+}); 
