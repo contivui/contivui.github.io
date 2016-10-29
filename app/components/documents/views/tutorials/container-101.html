@@ -116,15 +116,15 @@ eth0      Link encap:Ethernet  HWaddr 08:00:27:a2:bc:0d
 <p>Notice the following:</p>
 
 <ul>
-<li>The <a name="docker0"></a><a href="#docker0"><code>docker0</code></a> interface corresponds to the linux bridge and its associated
+<li>The <a id="docker0"></a><a href="#" scroll-to="docker0" offset="65"><code>docker0</code></a> interface corresponds to the linux bridge and its associated
 subnet <code>172.17.0.1/16</code>. This is created by the Docker daemon automatically, and
 is the default network containers belong to when no network is explicitly specified.
 </li>
-<li><a name="eth0"></a><a href="#eth0"><code>eth0</code></a> in this VM is the management interface, which we used to connect to the VM with ssh.
+<li><a id="eth0"></a><a href="#" scroll-to="eth0" offset="65"><code>eth0</code></a> in this VM is the management interface, which we used to connect to the VM with ssh.
 </li>
-<li><a name="eth1"></a><a href="#eth1"><code>eth1</code></a> in this VM is the interface used to connect to an external network (if needed).
+<li><a id="eth1"></a><a href="#" scroll-to="eth1" offset="65"><code>eth1</code></a> in this VM is the interface used to connect to an external network (if needed).
 </li>
-<li><a name="eth2"></a><a href="#eth2"><code>eth2</code></a> in this VM is the interface that carries vxlan and control (for example, etcd) traffic.
+<li><a id="eth2"></a><a href="#" scroll-to="eth2" offset="65"><code>eth2</code></a> in this VM is the interface that carries vxlan and control (for example, etcd) traffic.
 </li>
 </ul>
 <p>Next, check the version of the Contiv Network utility:</p>
@@ -568,9 +568,9 @@ round-trip min/avg/max = 35.941/37.460/38.980 ms
 
 <ul>
 
-<li>eth0 connects into the <a name="contiv_net"></a><a href="#contiv_net"><code>contiv-net</code></a> 
+<li>eth0 connects into the <a id="contiv_net"></a><a href="#" scroll-to="contiv_net" offset="65"><code>contiv-net</code></a> 
 </li>
-<li>eth1 connects the container to the external world and enables outside traffic to reach the container <a name="contiv_c1"></a><a href="#contiv_c1"><code>contiv-c1</code></a>. This connectivity also relies on the host's DNS <code>resolv.conf</code> for default non-container IP resolution.
+<li>eth1 connects the container to the external world and enables outside traffic to reach the container <a id="contiv_c1"></a><a href="#" scroll-to="contiv_c1" offset="65"><code>contiv-c1</code></a>. This connectivity also relies on the host's DNS <code>resolv.conf</code> for default non-container IP resolution.
 </li>
 </ul>
 <p>Similarly, outside traffic can be exposed on specific ports using <code>-p</code> command.</p>
@@ -620,7 +620,7 @@ DNAT       tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:9099 to:17
 <p>Remote drivers like Contiv provide an easy way to connect to external
 layer 2 or layer 3 networks using BGP or standard L2 access into the network.</p>
 <p>This can be done Using a BGP hand-off to the leaf or top-of-rack (TOR) switch. 
-<a href="/install/user_guide/getting_started/networking/bgp.html">Click here</a> for
+<a href="#/getting_started/networking/bgp">Click here</a> for
 an example that describes how you can use BGP with Contiv to provide native 
 container connectivity and reachability to rest of the network.</p>
 <p>For this tutorial, since we don't have a real or simulated BGP router, 

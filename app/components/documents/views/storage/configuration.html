@@ -13,7 +13,7 @@ a policy named <code>policy1</code> has been uploaded:</p>
 $ docker run -it -v policy1/sample:/mnt ubuntu bash
 </code></pre>
 <p>This pattern creates a volume called <code>sample</code> in the default Ceph pool of <code>policy1</code>. 
-See <a href="#driver_options">Driver Options</a> for information about how to change the pool (or other options),</p>
+See <a href="#" scroll-to="driver_options" offset="65">Driver Options</a> for information about how to change the pool (or other options),</p>
 
 <h2>JSON Global Configuration</h2>
 <p>Global configuration modifies the whole system through the <code>apiserver</code>, <code>volplugin</code>
@@ -31,16 +31,16 @@ command set.</p>
 <p>The options are:</p>
 
 <ul>
-<li><a name="TTL"></a><a href="#TTL"><code>TTL</code></a>: Time (in seconds) for a mount record to timeout if a <code>volplugin</code> instance dies.
+<li><a id="TTL"></a><a href="#" scroll-to="TTL" offset="65"><code>TTL</code></a>: Time (in seconds) for a mount record to timeout if a <code>volplugin</code> instance dies.
 </li>
-<li><a name="Debug"></a><a href="#Debug"><code>Debug</code></a>: Boolean value indicating whether or not to enable debug traps and logging.
+<li><a id="Debug"></a><a href="#" scroll-to="Debug" offset="65"><code>Debug</code></a>: Boolean value indicating whether or not to enable debug traps and logging.
 </li>
-<li><a name="Timeout"></a><a href="#Timeout"><code>Timeout</code></a>: A command is terminated if it runs longer than this time (in minutes).
+<li><a id="Timeout"></a><a href="#" scroll-to="Timeout" offset="65"><code>Timeout</code></a>: A command is terminated if it runs longer than this time (in minutes).
 </li>
-<li><a name="MountPath"></a><a href="#MountPath"><code>MountPath</code></a>: The base path used for mount directories. Directories will be in <code>policy/volume</code> format at this root.
+<li><a id="MountPath"></a><a href="#" scroll-to="MountPath" offset="65"><code>MountPath</code></a>: The base path used for mount directories. Directories will be in <code>policy/volume</code> format at this root.
 </li>
 </ul>
-<p><a name="json_tenant_config"></a></p>
+<p><a id="json_tenant_config"></a></p>
 
 <h2>JSON Tenant Configuration</h2>
 <p>Tenant configuration uses JSON to configure the default volume parameters such
@@ -81,7 +81,7 @@ as which pool to use. The JSON is uploaded to <code>etcd</code> by the <code>vol
 <p>The parameters described by the JSON are:</p>
 
 <ul>
-<li><a name="unlocked"></a><a href="#unlocked"><code>unlocked</code></a>: Removes the exclusive locks between mounts for a given volume.
+<li><a id="unlocked"></a><a href="#" scroll-to="unlocked" offset="65"><code>unlocked</code></a>: Removes the exclusive locks between mounts for a given volume.
 
 <ul>
 <li>This is a protective measure and is <em>not needed</em> to use NFS, so this flag
@@ -97,10 +97,10 @@ been created already.
 </li>
 <li>Commands run in a POSIX (not bash or zsh) shell.
 </li>
-<li>If the <a name="filesystems"></a><a href="#filesystems"><code>filesystems</code></a> block is omitted, <code>mkfs.ext4 -m0 %</code> is applied to
+<li>If the <a id="filesystems"></a><a href="#" scroll-to="filesystems" offset="65"><code>filesystems</code></a> block is omitted, <code>mkfs.ext4 -m0 %</code> is applied to
 all volumes within this policy.
 </li>
-<li>Referred to by the volume create-time parameter <a name="filesystem"></a><a href="#filesystem"><code>filesystem</code></a>. Note that you
+<li>Referred to by the volume create-time parameter <a id="filesystem"></a><a href="#" scroll-to="filesystem" offset="65"><code>filesystem</code></a>. Note that you
 can use a <code>%</code> to be replaced with the device to format.
 </li>
 </ul>
@@ -111,27 +111,27 @@ work being done on it. Ceph and NFS are supported as <code>mount</code> options,
 and <code>snapshot</code> operations require Ceph for now. Both driver names are lower-case.
 
 <ul>
-<li><a name="crud"></a><a href="#crud"><code>crud</code></a>: Create/Delete operations driver name
+<li><a id="crud"></a><a href="#" scroll-to="crud" offset="65"><code>crud</code></a>: Create/Delete operations driver name
 </li>
-<li><a name="mount"></a><a href="#mount"><code>mount</code></a>: Mount operations driver name
+<li><a id="mount"></a><a href="#" scroll-to="mount" offset="65"><code>mount</code></a>: Mount operations driver name
 </li>
-<li><a name="snapshot"></a><a href="#snapshot"><code>snapshot</code></a>: Snapshot operations
+<li><a id="snapshot"></a><a href="#" scroll-to="snapshot" offset="65"><code>snapshot</code></a>: Snapshot operations
 </li>
 </ul>
 </li>
 <li><code>driver</code>: driver-specific options.
 
 <ul>
-<li><a name="pool"></a><a href="#pool"><code>pool</code></a>: the ceph pool to use
+<li><a id="pool"></a><a href="#" scroll-to="pool" offset="65"><code>pool</code></a>: the ceph pool to use
 </li>
 </ul>
 </li>
 <li><code>create</code>: create-time options.
 
 <ul>
-<li><a name="size"></a><a href="#size"><code>size</code></a>: the size of the volume
+<li><a id="size"></a><a href="#" scroll-to="size" offset="65"><code>size</code></a>: the size of the volume
 </li>
-<li><a name="filesystem"></a><a href="#filesystem"><code>filesystem</code></a>: the filesystem to use, see <code>filesystems</code> above.
+<li><a id="filesystem"></a><a href="#" scroll-to="filesystem" offset="65"><code>filesystem</code></a>: the filesystem to use, see <code>filesystems</code> above.
 </li>
 </ul>
 </li>
@@ -139,19 +139,19 @@ and <code>snapshot</code> operations require Ceph for now. Both driver names are
 be applied to mounted volumes almost immediately.
 
 <ul>
-<li><a name="snapshots"></a><a href="#snapshots"><code>snapshots</code></a>: use the snapshots feature
+<li><a id="snapshots"></a><a href="#" scroll-to="snapshots" offset="65"><code>snapshots</code></a>: use the snapshots feature
 </li>
-<li><a name="snapshot"></a><a href="#snapshot"><code>snapshot</code></a>: map of the following parameters:
+<li><a id="snapshot"></a><a href="#" scroll-to="snapshot" offset="65"><code>snapshot</code></a>: map of the following parameters:
 </li>
-<li><a name="frequency"></a><a href="#frequency"><code>frequency</code></a>: the amount of time between taking snapshots.
+<li><a id="frequency"></a><a href="#" scroll-to="frequency" offset="65"><code>frequency</code></a>: the amount of time between taking snapshots.
 </li>
-<li><a name="keep"></a><a href="#keep"><code>keep</code></a>: the number of snapshots to keep. the oldest ones will be deleted first.
+<li><a id="keep"></a><a href="#" scroll-to="keep" offset="65"><code>keep</code></a>: the number of snapshots to keep. the oldest ones will be deleted first.
 </li>
-<li><a name="rate_limit"></a><a href="#rate_limit"><code>rate-limit</code></a>: map of the following rate-limiting parameters:
+<li><a id="rate_limit"></a><a href="#" scroll-to="rate_limit" offset="65"><code>rate-limit</code></a>: map of the following rate-limiting parameters:
 </li>
-<li><a name="write_bps"></a><a href="#write_bps"><code>write-bps</code></a>: Write bytes/s
+<li><a id="write_bps"></a><a href="#" scroll-to="write_bps" offset="65"><code>write-bps</code></a>: Write bytes/s
 </li>
-<li><a name="read_bps"></a><a href="#read_bps"><code>read-bps</code></a>: Read bytes/s
+<li><a id="read_bps"></a><a href="#" scroll-to="read_bps" offset="65"><code>read-bps</code></a>: Read bytes/s
 </li>
 </ul>
 </li>
@@ -160,7 +160,7 @@ be applied to mounted volumes almost immediately.
 provided via standard input, so for example if your file is <code>policy2.json</code>:</p>
 <pre class="highlight plaintext"><code>$ volcli policy upload myTenant &lt; policy2.json
 </code></pre>
-<p><a name="driver_options">&lt;/&gt;</a></p><a name="driver_options">
+<p><a id="driver_options">&lt;/&gt;</a></p><a id="driver_options">
 
 <h2>Driver Options</h2>
 <p>Driver options are passed at <code>docker volume create</code> time with the <code>--opt</code> flag.
@@ -171,8 +171,8 @@ They are <code>key=value</code> pairs. For example:</p>
 </code></pre>
 <p>The options are as follows:</p>
 
-</a><ul><a name="driver_options">
-</a><li><a name="driver_options"></a><a name="size"></a><a href="#size"><code>size</code></a>: The size (in MB) of the volume.
+</a><ul><a id="driver_options">
+</a><li><a id="driver_options"></a><a id="size"></a><a href="#" scroll-to="size" offset="65"><code>size</code></a>: The size (in MB) of the volume.
 </li>
 <li><code>snapshots</code>: Take snapshots or not. Affects future options with <code>snapshot</code> in the key name.
 
@@ -181,16 +181,16 @@ They are <code>key=value</code> pairs. For example:</p>
 </li>
 </ul>
 </li>
-<li><a name="snapshots_frequency"></a><a href="#snapshots_frequency"><code>snapshots.frequency</code></a>: The frequency which to take snapshots.
+<li><a id="snapshots_frequency"></a><a href="#" scroll-to="snapshots_frequency" offset="65"><code>snapshots.frequency</code></a>: The frequency which to take snapshots.
 </li>
-<li><a name="snapshots_keep"></a><a href="#snapshots_keep"><code>snapshots.keep</code></a>: The number of snapshots to keep.
+<li><a id="snapshots_keep"></a><a href="#" scroll-to="snapshots_keep" offset="65"><code>snapshots.keep</code></a>: The number of snapshots to keep.
 </li>
-<li><a name="filesystem"></a><a href="#filesystem"><code>filesystem</code></a>: The named filesystem to create. See the JSON Configuration
+<li><a id="filesystem"></a><a href="#" scroll-to="filesystem" offset="65"><code>filesystem</code></a>: The named filesystem to create. See the JSON Configuration
 section for more information on this.
 </li>
-<li><a name="rate_limit_read_bps"></a><a href="#rate_limit_read_bps"><code>rate-limit.read.bps</code></a>: Read b/s
+<li><a id="rate_limit_read_bps"></a><a href="#" scroll-to="rate_limit_read_bps" offset="65"><code>rate-limit.read.bps</code></a>: Read b/s
 </li>
-<li><a name="rate_limit_write_bps"></a><a href="#rate_limit_write_bps"><code>rate-limit.write.bps</code></a>: Write b/s
+<li><a id="rate_limit_write_bps"></a><a href="#" scroll-to="rate_limit_write_bps" offset="65"><code>rate-limit.write.bps</code></a>: Write b/s
 </li>
 </ul>
 

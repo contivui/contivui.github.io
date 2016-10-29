@@ -2,26 +2,26 @@
 				
 	<h1>Installing Contiv Network with Docker Swarm</h1>
 <p>This page describes how to set up a Contiv cluster using Docker Swarm.</p>
-<p><a name="Prerequisites"></a></p><a name="Prerequisites">
+<p><a id="Prerequisites"></a></p><a id="Prerequisites">
 
 <h2>Prerequisites</h2>
 
-</a><ol><a name="Prerequisites">
+</a><ol><a id="Prerequisites">
 <li>Install Ubuntu 15 or Centos 7.2 on all servers used for the Contiv cluster.
 </li>
 <li>Ensure that each server has at least two, and preferably three, interfaces.
 </li>
 <li>Choose a server that is on the management network. Run the install procedure below on this node. This <em>install node</em> manages the installation in addition to being part of your cluster.
 </li>
-</a><li><a name="Prerequisites">In a command shell, use the following commands to set two environment variables:
-</a><a name="export_CLUSTER_NODE_IPS_lt_node_ips_gt_and"></a><a href="#export_CLUSTER_NODE_IPS_lt_node_ips_gt_and"><code>export CLUSTER_NODE_IPS=&lt;node_ips&gt; and</code></a>export no_proxy=<node_ips>,127.0.0.1,localhost,netmaster<code>,
+</a><li><a id="Prerequisites">In a command shell, use the following commands to set two environment variables:
+</a><a id="export_CLUSTER_NODE_IPS_lt_node_ips_gt_and"></a><a href="#" scroll-to="export_CLUSTER_NODE_IPS_lt_node_ips_gt_and" offset="65"><code>export CLUSTER_NODE_IPS=&lt;node_ips&gt; and</code></a>export no_proxy=<node_ips>,127.0.0.1,localhost,netmaster<code>,
 where</code><node_ip>` is a list of the IP addresses of all nodes in your cluster.
 </node_ip></node_ips></li>
-<li>If your servers are behind an http proxy, use the following commands to set the proxies on the install node: <a name="export_http_proxy_lt_proxy_url_gt_"></a><a href="#export_http_proxy_lt_proxy_url_gt_"><code>export http_proxy=&lt;proxy url&gt;</code></a> and  <code>export https_proxy=&lt;proxy_url&gt;</code>. 
+<li>If your servers are behind an http proxy, use the following commands to set the proxies on the install node: <a id="export_http_proxy_lt_proxy_url_gt_"></a><a href="#" scroll-to="export_http_proxy_lt_proxy_url_gt_" offset="65"><code>export http_proxy=&lt;proxy url&gt;</code></a> and  <code>export https_proxy=&lt;proxy_url&gt;</code>. 
 </li>
 <li>Verify Python is installed on the target machines
 </li>
-<li>The setup scripts use the Python module <em>netaddr</em> and the Linux utility <em>bzip2</em>. If these are not installed on the machine where you are executing these steps, you must install them before proceeding. (You can use the following commands: <a name="yum_install_bzip2_pip_install_netaddr"></a><a href="#yum_install_bzip2_pip_install_netaddr"><code>yum install bzip2; pip install netaddr</code></a>.)
+<li>The setup scripts use the Python module <em>netaddr</em> and the Linux utility <em>bzip2</em>. If these are not installed on the machine where you are executing these steps, you must install them before proceeding. (You can use the following commands: <a id="yum_install_bzip2_pip_install_netaddr"></a><a href="#" scroll-to="yum_install_bzip2_pip_install_netaddr" offset="65"><code>yum install bzip2; pip install netaddr</code></a>.)
 </li>
 <li>(Optional but recommeded): Enable passwordless SSH access from the installation server to all the other servers in the cluster. An example is <a href="http://www.linuxproblem.org/art_9.html">here</a>.
 </li>
@@ -32,7 +32,7 @@ where</code><node_ip>` is a list of the IP addresses of all nodes in your cluste
 interfaces on which these IP addresses are configured.
 </li>
 </ol>
-<p><a name="Download"></a></p><a name="Download">
+<p><a id="Download"></a></p><a id="Download">
 
 <h2>Step 1: Download the Installer Script</h2>
 <p>Log into the install server and download the installer script using the following command:</p>
@@ -52,7 +52,7 @@ information for all server nodes in the setup.</p>
             control: &lt;interface on which control protocols can interact&gt;
             data: &lt;interface used to send data packets&gt;
 </code></pre>
-</a><p><a name="Download">A sample configuration file can be found here: </a><a href="/extras/sample_cfg.yml">sample_cfg.yml</a>.</p>
+</a><p><a id="Download">A sample configuration file can be found here: </a>sample_cfg.yml.</p>
 
 <h2>Step 3: Run the Installer Script</h2>
 <p>Set execute privileges on and run the installer script as follows:</p>
@@ -91,9 +91,9 @@ information for all server nodes in the setup.</p>
 
 <h2>What to Do Next</h2>
 <p>Use the Contiv <code>netctl</code> commands are used to create and manipulate networks, endpoint groups, and policies.</p>
-<p>See the small-scale Vagrant demo <a href="/documents/gettingStarted/networking/swarm.html">here</a> to get started.</p>
-<p>See the <a href="/documents/tutorials/">Tutorials</a> section for extended examples of setting up policy-based networks.</p>
-<p>See the <a href="/documents/samples/">Examples</a> section for details on using <code>netctl</code> to explore various features of Contiv networking.</p>
+<p>See the small-scale Vagrant demo <a href="#/documents/gettingStarted/networking/swarm">here</a> to get started.</p>
+<p>See the <a href="#/documents/tutorials">Tutorials</a> section for extended examples of setting up policy-based networks.</p>
+<p>See the <a href="#/documents/examples/docker">Examples</a> section for details on using <code>netctl</code> to explore various features of Contiv networking.</p>
 
 <h2>Troubleshooting</h2>
 <p>Current limitations of the script include the following:</p>

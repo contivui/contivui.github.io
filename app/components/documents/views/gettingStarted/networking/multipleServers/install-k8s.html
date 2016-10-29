@@ -14,7 +14,7 @@
 </li>
 <li>Choose a server that is on the management network and has Ansible installed. Run the install procedure below on this node. This <em>install node</em> manages the installation in addition to being part of your cluster.
 </li>
-<li>The setup scripts use the Python module <em>netaddr</em> and the Linux utility <em>bzip2</em>. If these are not installed on the machine where you are executing these steps, you must install them before proceeding. (You can use the following commands: <a name="yum_install_bzip2_pip_install_netaddr"></a><a href="#yum_install_bzip2_pip_install_netaddr"><code>yum install bzip2; pip install netaddr</code></a>.)
+<li>The setup scripts use the Python module <em>netaddr</em> and the Linux utility <em>bzip2</em>. If these are not installed on the machine where you are executing these steps, you must install them before proceeding. (You can use the following commands: <a id="yum_install_bzip2_pip_install_netaddr"></a><a href="#" scroll-to="yum_install_bzip2_pip_install_netaddr" offset="65"><code>yum install bzip2; pip install netaddr</code></a>.)
 </li>
 <li>Enable passwordless SSH access from the installation server to all the other servers in the cluster. 
 An example is <a href="http://www.linuxproblem.org/art_9.html">here</a>.
@@ -41,7 +41,7 @@ git clone https://github.com/jojimt/contrib -b contiv
 <h2>Step 3: Configure the Cluster Information</h2>
 <p>Edit the <code>cluster_defs.json</code> file to reflect your cluster information. 
 See the <code>cluster_defs.json.README</code> file for instructions.</p>
-<p><em>Note</em>: For ACI integration, edit <code>aci.yaml</code>. See <a href="/documents/gettingStarted/networking/aci.html">here</a> for more information.</p>
+<p><em>Note</em>: For ACI integration, edit <code>aci.yaml</code>. See <a href="#/documents/gettingStarted/networking/aci">here</a> for more information.</p>
 
 <h2>Step 4 Prepare the Nodes</h2>
 <p>Run the prepare script. Supply the login and <em>sudo</em> passwords when prompted.</p>

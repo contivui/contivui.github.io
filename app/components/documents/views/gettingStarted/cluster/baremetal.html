@@ -16,14 +16,14 @@ Unless stated otherwise, all the steps below are performed on the control host.
 <ul>
 <li>The <em>cluster-admin</em> login can be an existing login.
 </li>
-<li>The <em>cluster-admin</em> login must have <em>passwordless sudo</em> access configured. You can use the <a name="visudo"></a><a href="#visudo"><code>visudo</code></a> tool to configure passwordless access.
+<li>The <em>cluster-admin</em> login must have <em>passwordless sudo</em> access configured. You can use the <a id="visudo"></a><a href="#" scroll-to="visudo" offset="65"><code>visudo</code></a> tool to configure passwordless access.
 </li>
 </ul>
 </li>
-<li>Generate an <em>ssh</em> key for <em>cluster-admin</em>. You can use the <a name="ssh_keygen"></a><a href="#ssh_keygen"><code>ssh-keygen</code></a> tool to generate an <em>ssh</em> key.
+<li>Generate an <em>ssh</em> key for <em>cluster-admin</em>. You can use the <a id="ssh_keygen"></a><a href="#" scroll-to="ssh_keygen" offset="65"><code>ssh-keygen</code></a> tool to generate an <em>ssh</em> key.
 </li>
 <li>Add the public key for <em>cluster-admin</em> to all the nodes (including the control node) in your setup. 
-You can use <a name="ssh_copy_id_cluster_admin_lt_hostname_gt_"></a><a href="#ssh_copy_id_cluster_admin_lt_hostname_gt_"><code>ssh-copy-id cluster-admin@&lt;hostname&gt;</code></a> on each node, where <code>&lt;hostname&gt;</code> is the name of your control node.
+You can use <a id="ssh_copy_id_cluster_admin_lt_hostname_gt_"></a><a href="#" scroll-to="ssh_copy_id_cluster_admin_lt_hostname_gt_" offset="65"><code>ssh-copy-id cluster-admin@&lt;hostname&gt;</code></a> on each node, where <code>&lt;hostname&gt;</code> is the name of your control node.
 </li>
 </ul>
 <p>Install the following packages on your control host.</p>
@@ -52,9 +52,9 @@ ansible-playbook --key-file=~/.ssh/id_rsa -i /tmp/hosts -e '{"env": {}, "control
 </code></pre>
 
 <ul>
-<li>The <a name="control_interface"></a><a href="#control_interface"><code>control_interface</code></a> is the net device that carries <em>Serf</em> traffic on this node. Subtitute the interface name for <code>ifname</code>.
+<li>The <a id="control_interface"></a><a href="#" scroll-to="control_interface" offset="65"><code>control_interface</code></a> is the net device that carries <em>Serf</em> traffic on this node. Subtitute the interface name for <code>ifname</code>.
 </li>
-<li>The <a name="env"></a><a href="#env"><code>env</code></a> is the environment for running Ansible tasks such as <code>http-proxy</code>. 
+<li>The <a id="env"></a><a href="#" scroll-to="env" offset="65"><code>env</code></a> is the environment for running Ansible tasks such as <code>http-proxy</code>. 
 </li>
 </ul>
 <p>If there is no special environment to be configured then set <code>control_interface</code> to an empty dictionary as shown in the example.</p>
@@ -73,11 +73,11 @@ Following is a sample.</p>
 </code></pre>
 
 <ul>
-<li>The <a name="playbook_location"></a><a href="#playbook_location"><code>playbook-location</code></a> must contain the path of th Ansible directory you cloned 
+<li>The <a id="playbook_location"></a><a href="#" scroll-to="playbook_location" offset="65"><code>playbook-location</code></a> must contain the path of th Ansible directory you cloned 
 </li>
-<li>The <a name="user"></a><a href="#user"><code>user</code></a> must contain the name of the <em>cluster-admin</em> user 
+<li>The <a id="user"></a><a href="#" scroll-to="user" offset="65"><code>user</code></a> must contain the name of the <em>cluster-admin</em> user 
 </li>
-<li>The <a name="priv_key_file"></a><a href="#priv_key_file"><code>priv_key_file</code></a> value is the location of the <code>id_rsa</code> file of the <code>cluster-admin</code> user
+<li>The <a id="priv_key_file"></a><a href="#" scroll-to="priv_key_file" offset="65"><code>priv_key_file</code></a> value is the location of the <code>id_rsa</code> file of the <code>cluster-admin</code> user
 </li>
 </ul>
 <p>After you have made the changes, restart the control host:</p>
@@ -89,12 +89,12 @@ Following is a sample.</p>
 <p><em>Note:</em> The control host has two additional services that are not on other nodes, <code>collins</code> and <code>clusterm</code>.</p>
 
 <ul>
-<li>The <a name="collins"></a><a href="#collins"><code>collins</code></a> service is for node lifecycle management and event logging. 
+<li>The <a id="collins"></a><a href="#" scroll-to="collins" offset="65"><code>collins</code></a> service is for node lifecycle management and event logging. 
 </li>
-<li>The <a name="clusterm"></a><a href="#clusterm"><code>clusterm</code></a> service is the cluster manager daemon. The <code>clusterctl</code> utility is provided to exercise the REST endpoint provided by the cluster manager.
+<li>The <a id="clusterm"></a><a href="#" scroll-to="clusterm" offset="65"><code>clusterm</code></a> service is the cluster manager daemon. The <code>clusterctl</code> utility is provided to exercise the REST endpoint provided by the cluster manager.
 </li>
 </ul>
-<p><a name="provisioning"></a></p>
+<p><a id="provisioning"></a></p>
 
 <h3>Provision Additional Nodes</h3>
 <p>Cluster Manager uses <em>Serf</em> as a discovery service for node health monitoring and for cluster bootstrapping.</p>
@@ -109,8 +109,8 @@ in the Vagrant setup for <em>Serf</em>-based discovery:</p>
 </code></pre>
 <p>You must specify the <code>env</code> and <code>control_interface</code> Ansible variables. Do this by using the 
 <code>--extra-vars</code> flag as shown.</p>
-<p>You can also set variables as <a href="#set_get_global_vars">global variables</a>.</p>
-<p>For more information on Ansible variables, see the list of <a href="#ansible_vars">Ansible Variables</a>.</p>
+<p>You can also set variables as <a href="#" scroll-to="set_get_global_vars" offset="65">global variables</a>.</p>
+<p>For more information on Ansible variables, see the list of <a href="#" scroll-to="ansible_vars" offset="65">Ansible Variables</a>.</p>
 
 <h3>List Discovered Nodes</h3>
 <p>Use the following command to view the cluster nodes:</p>
@@ -119,7 +119,7 @@ in the Vagrant setup for <em>Serf</em>-based discovery:</p>
 <p><em>Note</em>: It takes a few minutes for the nodes to be discovered and to appear in the list.</p>
 <p>To fetch information about a single node use:
 <code>clusterctl node get &lt;node-name&gt;</code>.</p>
-<p><a name="set_get_global_vars"></a></p>
+<p><a id="set_get_global_vars"></a></p>
 
 <h3>Set and Get Global Variables</h3>
 <p>You can set variables common to all cluster nodes (for example,  environment, scheduler-provider and so on) 
@@ -132,9 +132,9 @@ by using the
 <ul>
 <li>The variables set at global level are merged with the variables specified at the node level. In case of a conflict, the node-level variable takes precedence.
 </li>
-<li>See <a href="#ansible_vars">Ansible Variables</a> for a list of applicable variables.
+<li>See <a href="#" scroll-to="ansible_vars" offset="65">Ansible Variables</a> for a list of applicable variables.
 </li>
-<li>The variables must be passed as a quoted JSON string using the <a name="_extra_vars"></a><a href="#_extra_vars"><code>--extra-vars</code></a> flag. For example:
+<li>The variables must be passed as a quoted JSON string using the <a id="_extra_vars"></a><a href="#" scroll-to="_extra_vars" offset="65"><code>--extra-vars</code></a> flag. For example:
 </li>
 </ul>
 <pre class="highlight plaintext"><code>clusterctl global set --extra-vars='{"env" : {"http_proxy": "my.proxy.url"}, "scheduler_provider": "ucp-swarm"}'
@@ -146,15 +146,15 @@ by using the
 </code></pre>
 <p>The command pushes the configuration to the node and starts infra services on that node using <code>ansible</code>-based configuration management.</p>
 <p>The services that are configured depend on the mandatory parameter <code>--host-group</code>.</p>
-<p>See the <code>service-master</code> and <code>service-worker</code> host-groups in <a href="/extras/site.yml">ansible/site.yml</a> to learn more about the services that are configured.</p>
+<p>See the <code>service-master</code> and <code>service-worker</code> host-groups in ansible/site.yml to learn more about the services that are configured.</p>
 <p>To quickly check if commissioning a node worked, use:</p>
 <p><code>etcdctl member list</code></p>
 <p>The command lists all the commissioned members of the list.</p>
-<p>Some Ansible variables are mandatory when commissioning a node. Mandatory variables, as well as some useful optional variables, are listed at <a href="#ansible_vars">Ansible Variables</a>.</p>
+<p>Some Ansible variables are mandatory when commissioning a node. Mandatory variables, as well as some useful optional variables, are listed at <a href="#" scroll-to="ansible_vars" offset="65">Ansible Variables</a>.</p>
 <p>The variables must be passed as a quoted JSON string using the <code>--extra-vars</code> flag. For example:</p>
 <pre class="highlight plaintext"><code>clusterctl node commission node1 --extra-vars='{"env" : {}, "control_interface": "eth1", "netplugin_if": "eth2" }' --host-group "service-master"
 </code></pre>
-<p>A common set of variables (for example, environment variables) can be set just once as <a href="#set_get_global_vars">global variables</a>.
+<p>A common set of variables (for example, environment variables) can be set just once as <a href="#" scroll-to="set_get_global_vars" offset="65">global variables</a>.
 This eliminates the need to specify the common variables for every commission command.</p>
 
 <h3>Decommission a Node</h3>
@@ -183,37 +183,37 @@ clusterctl nodes decommission &lt;space-separated node-names&gt;
 clusterctl nodes maintain &lt;space-separated node-names&gt;
 </code></pre>
 <p>Refer the documentation of individual commands for details about the commands' effects.</p>
-<p><a name="ansible_vars"></a></p>
+<p><a id="ansible_vars"></a></p>
 
 <h2>Ansible Variables for Provisioning</h2>
-<p>Following is a list of the Ansible variables that can be passed when commissioning a node, or set at a global level as described in <a href="#set_get_global_vars">Set and Get Global Variables</a>.</p>
-<p>Ansible variables can also be passed at the time of setting up a node for discovery as described in <a href="#provisioning">Provisioning Additional Nodes</a>.</p>
+<p>Following is a list of the Ansible variables that can be passed when commissioning a node, or set at a global level as described in <a href="#" scroll-to="set_get_global_vars" offset="65">Set and Get Global Variables</a>.</p>
+<p>Ansible variables can also be passed at the time of setting up a node for discovery as described in <a href="#" scroll-to="provisioning" offset="65">Provisioning Additional Nodes</a>.</p>
 <p>Variables specified at the global level are merged with variables specified for a node-level operation. In case of a conflict, the node-level variable takes precedence.</p>
 <p>Setting a global variable that has same value across all nodes in a cluster can substantially reduce the need to specified variables at every node-level operation,
  and is a recommended practice.</p>
-<p>The lists of Variables that follow are in sections, <a href="#mandatory_vars"><em>Mandatory Variables</em></a> and <a href="#optional_vars"><em>Optional Variables</em></a>. (The Optional Variables list is not comprehensive, but contains variables useful for clustering tasks.)</p>
+<p>The lists of Variables that follow are in sections, <a href="#" scroll-to="mandatory_vars" offset="65"><em>Mandatory Variables</em></a> and <a href="#" scroll-to="optional_vars" offset="65"><em>Optional Variables</em></a>. (The Optional Variables list is not comprehensive, but contains variables useful for clustering tasks.)</p>
 <p><em>Mandatory Variables</em> are variables that must be set before a node can be configured.</p>
 <p><em>Optional Variables</em> are variables that affect the default Ansible behavior. Examples are deploying a specific scheduler stack or a specific networking mode.</p>
 <p><em>Optional Variables</em> are further organized into the following service-specific subsections:</p>
 
 <ul>
-<li><a href="#serf-based-discovery">Serf-based Discovery</a>
+<li><a href="#" scroll-to="serf-based-discovery" offset="65">Serf-based Discovery</a>
 </li>
-<li><a href="#scheduler-stack">Scheduler Stack</a>
+<li><a href="#" scroll-to="scheduler-stack" offset="65">Scheduler Stack</a>
 </li>
-<li><a href="#contiv-networking">Contiv Networking</a>
+<li><a href="#" scroll-to="contiv-networking" offset="65">Contiv Networking</a>
 </li>
 </ul>
 <p>Several other variables are made available to provide a programmability in the Ansible plays. We encourage you to look at the 
 Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vendor/ansible">Contiv Cluster GitHub site</a>.</p>
-<p><a name="mandatory_vars"></a></p>
+<p><a id="mandatory_vars"></a></p>
 
 <h3>Mandatory Variables</h3>
 
 <ul>
-<li><a name="env"></a><a href="#env"><code>env</code></a> is used to set the environment variables available to Ansible tasks. A common use of this variable is to set the http-proxy information.
+<li><a id="env"></a><a href="#" scroll-to="env" offset="65"><code>env</code></a> is used to set the environment variables available to Ansible tasks. A common use of this variable is to set the http-proxy information.
 </li>
-<li><a name="env"></a><a href="#env"><code>env</code></a> is specified as a JSON dictionary.
+<li><a id="env"></a><a href="#" scroll-to="env" offset="65"><code>env</code></a> is specified as a JSON dictionary.
 </li>
 </ul>
 <pre class="highlight json"><code><span class="p">{</span><span class="nt">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"var1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"val1"</span><span class="p">,</span><span class="w"> </span><span class="nt">"http_proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://my.proxy.url"</span><span class="p">,</span><span class="w"> </span><span class="nt">"https_proxy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://my.proxy.url"</span><span class="w"> </span><span class="p">}}</span><span class="w">
@@ -227,7 +227,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </span></code></pre>
 
 <ul>
-<li><strong>control_interface</strong> identifies the netdevice on the node that carries the traffic generated by infrastructure applications like <a name="etcd"></a><a href="#etcd"><code>etcd</code></a>, <code>ceph</code> and so on.
+<li><strong>control_interface</strong> identifies the netdevice on the node that carries the traffic generated by infrastructure applications like <a id="etcd"></a><a href="#" scroll-to="etcd" offset="65"><code>etcd</code></a>, <code>ceph</code> and so on.
 </li>
 <li><strong>control_interface</strong> is specified as a JSON string.
 </li>
@@ -252,27 +252,27 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </ul>
 <pre class="highlight json"><code><span class="p">{</span><span class="nt">"service_vip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.168.2.252"</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><a name="optional_vars"></a></p>
+<p><a id="optional_vars"></a></p>
 
 <h3>Optional Variables</h3>
-<p><a name="serf-based-discovery"></a></p>
+<p><a id="serf-based-discovery"></a></p>
 
 <h4>Serf-based Discovery</h4>
 
 <ul>
-<li><strong>serf_cluster_name</strong> is the name of the cluster that Serf uses to discover other peer nodes. You can use this if there are multiple clusters in the same subnet of <a name="control_interface"></a><a href="#control_interface"><code>control_interface</code></a> and you would like Serf to only discover the nodes in a specific cluster.
+<li><strong>serf_cluster_name</strong> is the name of the cluster that Serf uses to discover other peer nodes. You can use this if there are multiple clusters in the same subnet of <a id="control_interface"></a><a href="#" scroll-to="control_interface" offset="65"><code>control_interface</code></a> and you would like Serf to only discover the nodes in a specific cluster.
 </li>
 <li><strong>serf_cluster_name</strong> is specified as a JSON string.
 </li>
 </ul>
 <pre class="highlight json"><code><span class="p">{</span><span class="nt">"serf_cluster_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cluster-prod-eng"</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><a name="scheduler-stack"></a></p>
+<p><a id="scheduler-stack"></a></p>
 
 <h4>Scheduler Stack</h4>
 
 <ul>
-<li><strong>scheduler_provider</strong> identifies the scheduler stack to use. Two stacks are supported: <a name="native_swarm"></a><a href="#native_swarm"><code>native-swarm</code></a> and <code>ucp-swarm</code>. The first creates a swarm cluster using the stock swarm image from Docker Hub. The seconds brings-up a UDP cluster with swarm bundled in it.
+<li><strong>scheduler_provider</strong> identifies the scheduler stack to use. Two stacks are supported: <a id="native_swarm"></a><a href="#" scroll-to="native_swarm" offset="65"><code>native-swarm</code></a> and <code>ucp-swarm</code>. The first creates a swarm cluster using the stock swarm image from Docker Hub. The seconds brings-up a UDP cluster with swarm bundled in it.
 </li>
 <li><strong>scheduler_provider</strong> is specified as a JSON string.
 </li>
@@ -281,7 +281,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </span></code></pre>
 
 <ul>
-<li><strong>ucp_bootstrap_node_name</strong> is the name (as seen in the <a name="clusterctl_nodes_get"></a><a href="#clusterctl_nodes_get"><code>clusterctl nodes get</code></a> command) of the node to bootstrap UCP with. This is the first node that is commissioned in the cluster. This variable is mandatory when <strong>scheduler_provider</strong> is set to <code>ucp-swarm</code>.
+<li><strong>ucp_bootstrap_node_name</strong> is the name (as seen in the <a id="clusterctl_nodes_get"></a><a href="#" scroll-to="clusterctl_nodes_get" offset="65"><code>clusterctl nodes get</code></a> command) of the node to bootstrap UCP with. This is the first node that is commissioned in the cluster. This variable is mandatory when <strong>scheduler_provider</strong> is set to <code>ucp-swarm</code>.
 </li>
 <li><strong>ucp_bootstrap_node_name</strong> is specified as a JSON string.
 </li>
@@ -297,12 +297,12 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </ul>
 <pre class="highlight json"><code><span class="p">{</span><span class="nt">"ucp_license_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/path/to/ucp/licence"</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><a name="contiv-networking"></a></p>
+<p><a id="contiv-networking"></a></p>
 
 <h4>Contiv Networking</h4>
 
 <ul>
-<li><strong>contiv_network_mode</strong> identifies the mode of operation for <a name="netplugin"></a><a href="#netplugin"><code>netplugin</code></a>. Netplugin supports two modes: <code>aci</code> and <code>standalone</code>. <code>aci</code> mode is used to start <code>netplugin</code> in a Cisco APIC managed fabric deployment. 'standalone' mode can be used when deploying <code>netplugin</code> with standalone layer2 and layer3 switches.
+<li><strong>contiv_network_mode</strong> identifies the mode of operation for <a id="netplugin"></a><a href="#" scroll-to="netplugin" offset="65"><code>netplugin</code></a>. Netplugin supports two modes: <code>aci</code> and <code>standalone</code>. <code>aci</code> mode is used to start <code>netplugin</code> in a Cisco APIC managed fabric deployment. 'standalone' mode can be used when deploying <code>netplugin</code> with standalone layer2 and layer3 switches.
 </li>
 <li><strong>contiv_network_mode</strong> is specified as a JSON string.
 </li>
@@ -314,7 +314,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 <p>The following variables are applicable when <code>contiv_network_mode</code> is set to <code>aci</code>:</p>
 
 <ul>
-<li><strong>apic_url</strong> specifies the URL for APIC. This is a mandatory variable in <a name="aci"></a><a href="#aci"><code>aci</code></a> mode.
+<li><strong>apic_url</strong> specifies the URL for APIC. This is a mandatory variable in <a id="aci"></a><a href="#" scroll-to="aci" offset="65"><code>aci</code></a> mode.
 </li>
 <li><strong>apic_url</strong> is specified as a JSON string.
 </li>
@@ -323,7 +323,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </span></code></pre>
 
 <ul>
-<li><strong>apic_username</strong> specifies the username for APIC. This is a mandatory variable in <a name="aci"></a><a href="#aci"><code>aci</code></a> mode.
+<li><strong>apic_username</strong> specifies the username for APIC. This is a mandatory variable in <a id="aci"></a><a href="#" scroll-to="aci" offset="65"><code>aci</code></a> mode.
 </li>
 <li><strong>apic_username</strong> is specified as a JSON string.
 </li>
@@ -332,7 +332,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </span></code></pre>
 
 <ul>
-<li><strong>apic_password</strong> specifies the password for APIC. This is a mandatory variable in <a name="aci"></a><a href="#aci"><code>aci</code></a>  mode.
+<li><strong>apic_password</strong> specifies the password for APIC. This is a mandatory variable in <a id="aci"></a><a href="#" scroll-to="aci" offset="65"><code>aci</code></a>  mode.
 </li>
 <li><strong>apic_password</strong> is specified as a JSON string.
 </li>
@@ -341,7 +341,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </span></code></pre>
 
 <ul>
-<li><strong>apic_leaf_nodes</strong> specifies the full path of the leaf nodes managed by APIC. This is a mandatory variable in <a name="aci"></a><a href="#aci"><code>aci</code></a> mode.
+<li><strong>apic_leaf_nodes</strong> specifies the full path of the leaf nodes managed by APIC. This is a mandatory variable in <a id="aci"></a><a href="#" scroll-to="aci" offset="65"><code>aci</code></a> mode.
 </li>
 <li><strong>apic_leaf_nodes</strong> is specified as a JSON string.
 </li>
@@ -359,7 +359,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 </span></code></pre>
 
 <ul>
-<li><strong>apic_epg_bridge_domain</strong> can be optionally used to provide a pre-created bridge domain. The bridge domain must already exist under tenant <a name="common"></a><a href="#common"><code>common</code></a>.
+<li><strong>apic_epg_bridge_domain</strong> can be optionally used to provide a pre-created bridge domain. The bridge domain must already exist under tenant <a id="common"></a><a href="#" scroll-to="common" offset="65"><code>common</code></a>.
 </li>
 <li><strong>apic_epg_bridge_domain</strong> is specified as a JSON string.
 </li>
@@ -380,7 +380,7 @@ Ansible plays on the <a href="https://github.com/contiv/cluster/tree/master/vend
 <p>The following variables are applicable when <code>contiv_network_mode</code> is set to <code>standalone</code>:</p>
 
 <ul>
-<li><strong>fwd_mode</strong> specifies whether netplugin shall bridge or route the packet. Netplugin supports two forwarding modes viz. <a name="bridge"></a><a href="#bridge"><code>bridge</code></a> and <code>routing</code>.
+<li><strong>fwd_mode</strong> specifies whether netplugin shall bridge or route the packet. Netplugin supports two forwarding modes viz. <a id="bridge"></a><a href="#" scroll-to="bridge" offset="65"><code>bridge</code></a> and <code>routing</code>.
 </li>
 <li><strong>fwd_mode</strong> is specified as a JSON string.
 </li>
